@@ -2,7 +2,7 @@
 var http = require("http");
 console.log("Starting http");
 var host = "127.0.0.1",
-    port = 1337;
+    port = 8888;
 var server = http.createServer(function( request, response ){
     /* this callback will get fired every time the page is request */
     console.log("Recieved request: " + request.url);

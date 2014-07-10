@@ -2,9 +2,7 @@
 var fs = require("fs"),
     http = require("http");
 
-var host = "127.0.0.1",
-    port = "92",
-    serverConf = "../data/simple-http-config.json",
+var serverConf = "../data/simple-http-config.json",
     routingConf = "../data/simple-routing.json";
 
 var routing = JSON.parse(fs.readFileSync(routingConf)),
@@ -30,5 +28,5 @@ var server = http.createServer(function( request, response ){
 });
 
 server.listen( config.port, config.host, function(){
-    console.log("Listening " + host + ":" + port);
+    console.log("Listening " + config.host + ":" + config.port);
 });
