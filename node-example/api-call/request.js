@@ -34,7 +34,7 @@ var getRepos = function(username, callback){
                 // });
                 // console.log('Total number of repos: ', repos.length);
                 
-                callback(repos);
+                callback(username, repos);
             });
     });
 
@@ -44,9 +44,9 @@ var getRepos = function(username, callback){
       console.error(e);
     });
 }
-getRepos('bglodjaic', function(repos){
-    console.log(repos);
+getRepos('bglodjaic', function(username, repos){
+    console.log('Repos of ' + username + '(' + repos.length + '):\n', repos);
 });
-getRepos('radovan-svedic', function(repos){
-    console.log(repos);
+getRepos('radovan-svedic', function(username, repos){
+    console.log('Repos of ' + username + '(' + repos.length + '):\n', repos);
 });
