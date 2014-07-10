@@ -327,6 +327,18 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+
+        // requirejs conf
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: '<%= config.app %>/scripts',
+                    name: '../../bower_components/almond/almond',
+                    out: '<%= config.dist %>/scripts/main.js',
+                    include: ['main']
+                }
+            }
         }
     });
 
