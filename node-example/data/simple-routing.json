@@ -1,0 +1,6 @@
+{
+    "/": "http-simple.html",
+    "/test": "http-simple-test.html",
+    "/test/": "http-simple-test.html",
+    "404": "http-simple-404.html"
+}
