@@ -4,9 +4,11 @@ var fs = require("fs"),
 
 var host = "127.0.0.1",
     port = "92",
+    serverConf = "../data/simple-http-config.json",
     routingConf = "../data/simple-routing.json";
 
-var config = JSON.parse(fs.readFileSync(routingConf));
+var routing = JSON.parse(fs.readFileSync(routingConf)),
+    config = JSON.parse(fs.readFileSync(serverConf));
 
 var server = http.createServer(function( request, response ){
     console.log("Recieved request: " + request.url);
@@ -16,7 +18,7 @@ var server = http.createServer(function( request, response ){
         contentType = "text/html",
         content = fs.readFileSync("../public/http-simple-404.html");
 
-    fs.readFile("../public/" + config[request.url], function(error, data){
+    fs.readFile("../public/" + routing[request.url], function(error, data){
         if(!error){
             content = data;
             status = 200;
@@ -27,6 +29,6 @@ var server = http.createServer(function( request, response ){
     });
 });
 
-server.listen( port, host, function(){
+server.listen( config.port, config.host, function(){
     console.log("Listening " + host + ":" + port);
 });
