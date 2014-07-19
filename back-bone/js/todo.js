@@ -37,7 +37,8 @@ todoItem.fetch({
         todoItem.set('status', 'in-progress');
         console.log(todoItem.get('status'));
         todoView.render();
-        $(document.body).html(todoView.el);
+        // $(document.body).html(todoView.el);
+        $('#container').html(todoView.el);
     },
     error: function(model, response, options){
         console.log('Backbone fetch error');

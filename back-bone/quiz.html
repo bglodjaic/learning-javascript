@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz using Backbonejs</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" type="text/css" href="css/quiz.css">
+</head>
+<body class="home">
+    <div id="container"></div>
+
+    <script id="questionTemplate" type="text/template">
+        <strong><%= title %></strong>
+        <ul>
+            <li><em><%= cansw %></em></li>
+        </ul>
+    </script>
+
+    <script type="text/javascript" src="js/lib/vendor/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/vendor/underscore.js"></script>
+    <script type="text/javascript" src="js/lib/vendor/backbone.js"></script>
+    <script type="text/javascript" src="js/quiz.js"></script>
+</body>
+</html>

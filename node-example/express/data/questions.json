@@ -1,0 +1,48 @@
+{
+    "questions" : [
+        {
+            "title" : "Na kom kontinentu se nalazi država Mali?",
+            "answers" : {
+                "a" : "Africi",
+                "b" : "Aziji",
+                "c" : "Južnoj Americi",
+                "d" : "Evropi"
+            },
+            "correct" : "a",
+            "points" : "3"
+        },
+        {
+            "title" : "Kako se zove glavni grad Etiopije?",
+            "answers" : {
+                "a" : "Etiopija Siti",
+                "b" : "Kartum",
+                "c" : "Najrobi",
+                "d" : "Adis Abeba"
+            },
+            "correct" : "d",
+            "points" : "3"
+        },
+        {
+            "title" : "Koja je najmnogoljudnija zemlja posle Kine?",
+            "answers" : {
+                "a" : "Iran",
+                "b" : "Italija",
+                "c" : "Indonezija",
+                "d" : "Indija"
+            },
+            "correct" : "d",
+            "points" : "3"
+        },
+        {
+            "title" : "Dovršite rečenicu:  Nisam razgovarao...",
+            "answers" : {
+                "a" : "nisakim",
+                "b" : "s nikim",
+                "c" : "ni sa kim",
+                "d" : "sa nikim"
+            },
+            "correct" : "c",
+            "points" : "3"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+body.home{
+    background-color: #6c6c6c;
+}
+#container{
+    margin: 0 auto;
+    width: 80%;
+    color: #cecece;
+    background-color: #2c2c2c;
+}
+.question {
+    padding: 5px;
+}
+.question ul{
+    list-style-type: none;
+}
