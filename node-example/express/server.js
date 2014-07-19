@@ -2,6 +2,7 @@
 var fs = require("fs"),
     https = require("https"),
     express = require("express"),
+    todo = JSON.parse(fs.readFileSync("data/todo.json")),
     config = JSON.parse(fs.readFileSync("configs/app.json"));
 
 console.log("Starting Express app...");
@@ -18,7 +19,11 @@ var posts = {
     "fck-tmr-mng" : {
         "title" : "Score! oouuu yeah!",
         "descr" : "All night long!!!"
-    }
+    },
+};
+
+var gets = {
+    "todo" : todo
 }
 
 var app = express();
@@ -26,14 +31,26 @@ var app = express();
 app.use(express.static(__dirname + "/" + config.paths.static));
 
 app.get("/", function(req, res){
-    res.send("Welcome to Express nodeJS!");
+    // res.send("Welcome to Express nodeJS!");
+    res.json({ some: "object literal" });
 });
 app.get("/post/:post_alias", function(req, res){
     var post = posts[req.params.post_alias];
     if(post){
         res.send("<article><h1>" + post.title + "</h1><p>" + post.descr + "</p></article>" );
-    } else {
+} else {
         res.send(404, "<p>Not yet :(</p>");
+    }
+});
+
+app.get("/get/:get_alias", function( req, res){
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    var get = gets[req.params.get_alias];
+    if(get){
+        res.json(get);
+    }
+    else{
+        res.send(404, "BAD REQUEST!");
     }
 });
 
