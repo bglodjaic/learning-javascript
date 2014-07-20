@@ -13,3 +13,6 @@ body.home{
 .question ul{
     list-style-type: none;
 }
+li.question ul li.answer{
+    cursor: pointer;
+}

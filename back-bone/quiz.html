@@ -13,7 +13,11 @@
     <script id="questionTemplate" type="text/template">
         <strong><%= title %></strong>
         <ul>
-            <li><em><%= cansw %></em></li>
+            <% _.forEach(answers, function(val, i){ %>
+            <li class="answer">
+                <b><%= i %>)</b> <%= val %>
+            </li>
+            <% }); %>
         </ul>
     </script>
 

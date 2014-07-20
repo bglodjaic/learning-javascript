@@ -17,14 +17,6 @@
                 console.error(error);
             });
         },
-        defaults: {
-            title: 'No text',
-            answers: {
-                1 : 'Answer A'
-            },
-            cansw: false,
-            givenAnswer: 0
-        },
         validate: function (attrs, options) {
             if (!attrs.title) {
                 return 'Question must have a title!';
@@ -37,22 +29,6 @@
 
     QzApp.Collections.QuestionCollection = Backbone.Collection.extend({
         model: QzApp.Models.Question
-    });
-
-    QzApp.Views.QuestionsView = Backbone.View.extend({
-        tagName: 'ul',
-        initialize: function () {
-        },
-        render: function () {
-            // filter through all items in a collection
-            this.collection.each(function (question) {
-                // for each, create new QuestionView
-                var questionView = new QzApp.Views.QuestionView({ model: question });
-                // append to the root element
-                this.$el.append(questionView.render().el);
-            }, this);
-            return this;
-        }
     });
 
     // View for all questions
@@ -76,37 +52,54 @@
         tagName: 'li',
         className: 'question',
         template: _.template( QzApp.Helpers.template('questionTemplate')),
-        initialize: function () {
+        events: {
+            'click .answer' : 'answer'
         },
         render: function() {
             this.$el.html( this.template(this.model.toJSON()));
             return this;
+        },
+        answer: function(e){
+            console.log(this.model.get('title'));
         }
     });
 
     var questionsCollestion = new QzApp.Collections.QuestionCollection([
         {
-            title: 'Koliko ima zvezda na nebu?',
-            answers : {
-                'a': '100',
-                'b': '10000',
-                'c': '100000000',
-                'd': '>100000000000'
+            "title" : "Na kom kontinentu se nalazi država Mali?",
+            "answers" : {
+                "a" : "Africi",
+                "b" : "Aziji",
+                "c" : "Južnoj Americi",
+                "d" : "Evropi"
             },
-            cansw: 'd'
+            "correct" : "a",
+            "points" : "3"
         },
         {
-            title: 'Question two?',
-            answers : {
-                'a': 'answer 1',
-                'b': 'answer 2',
-                'c': 'answer 3',
-                'd': 'answer 4'
+            "title" : "Kako se zove glavni grad Etiopije?",
+            "answers" : {
+                "a" : "Etiopija Siti",
+                "b" : "Kartum",
+                "c" : "Najrobi",
+                "d" : "Adis Abeba"
             },
-            cansw: 'b'
+            "correct" : "d",
+            "points" : "3"
+        },
+        {
+            "title" : "Koja je najmnogoljudnija zemlja posle Kine?",
+            "answers" : {
+                "a" : "Iran",
+                "b" : "Italija",
+                "c" : "Indonezija",
+                "d" : "Indija"
+            },
+            "correct" : "d",
+            "points" : "3"
         }
     ]);
-
+    
     var questionsView = new QzApp.Views.QuestionsView({ collection: questionsCollestion }); 
 
     $('#container').html(questionsView.render().el);
