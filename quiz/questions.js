@@ -1,3 +1,5 @@
+// Q1
+
 function Example() {
   this.base = 10;
   function isEven() {
@@ -14,3 +16,17 @@ function Example() {
 }
 e = new Example();
 e.calculate(); // ???
+
+// Q2
+
+var arr = [];
+
+for(var i = 1; i <= 3; i++) {
+  arr.push(function (i) {
+    return i;
+  });
+}
+
+arr.forEach(function (fn) {
+  console.log(fn()); // output ???
+});
