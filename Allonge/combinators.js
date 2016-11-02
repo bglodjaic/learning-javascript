@@ -80,3 +80,13 @@ const unary = (fn) => (fn.length > 1) ? (p) => fn.call(this, p) : fn;
 let mapped = ['1','2','3'].map(unary(parseInt));
 console.log('******mapped****************');
 console.log(mapped);
+
+const tap = (value) =>
+    (fn) => (
+        typeof(fn) === 'function' && fn(value),
+            value
+    )
+
+let a = tap('espresso');
+console.log('***********************************');
+console.log(a((z)=> {console.log(`test a ${z}`)}));

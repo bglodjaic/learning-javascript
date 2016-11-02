@@ -8,7 +8,7 @@ let f = ((n) => {
         }
     };
 
-    return even(n)
+    return even(n);
 });
 
 // console.log(f(13));
