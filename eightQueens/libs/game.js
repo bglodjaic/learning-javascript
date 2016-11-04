@@ -4,7 +4,6 @@ module.exports = function (options) {
 
     let gameOptions = {
         boardSize: 4,
-        asciiArtBoard: true,
         asciiArt: {
             0: '…',
             1: '♕'
@@ -93,7 +92,7 @@ module.exports = function (options) {
         },
         show: (asciiArt) => {
             if (solved) {
-                drawBoard(gameOptions.asciiArtBoard);
+                drawBoard(asciiArt);
             }
         }
     }
