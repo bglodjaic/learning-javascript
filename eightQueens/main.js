@@ -4,7 +4,4 @@ let game = Game({
     boardSize: 8
 });
 
-game.solve() ? game.show() : void 0;
-
-
-
+game.solve() ? game.show(1) : void 0;
