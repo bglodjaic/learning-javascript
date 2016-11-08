@@ -90,7 +90,7 @@ function Runner () {
 
         var runnerProto = {
             start: function () {
-                if (search(position)) {
+                if (maze.getMap().length && search(position)) {
                     return path;
                 }
             },
