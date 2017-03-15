@@ -1,0 +1,21 @@
+{
+  "name": "game-of-life",
+  "version": "0.0.1",
+  "description": "Game of Life",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Game",
+    "of",
+    "Life"
+  ],
+  "author": "60JAH",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.26.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3"
+  }
+}
